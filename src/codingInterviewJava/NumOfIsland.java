@@ -3,12 +3,15 @@ package codingInterviewJava;
 class NumOfIsland {
 
     public static void main(String[] args) {
+    	
+    	NumOfIsland nIsland = new NumOfIsland();
 
         int[][] grid = new int[][] { { 1, 1, 0, 0, 0 }, { 1, 1, 0, 0, 0 }, { 0, 0, 1, 0, 0 }, { 0, 0, 0, 1, 1 } };
-        System.out.println(numIslands(grid));
+        
+        System.out.println(nIsland.countIsland(grid));
     }
 
-    public static int numIslands(int[][] grid) {
+    public int countIsland(int[][] grid) {
 
         int numsOfRow = grid.length;
         int numsOfCol = grid[0].length;
@@ -25,12 +28,10 @@ class NumOfIsland {
                 }
             }
         }
-
         return total;
-
     }
 
-    public static int dfs(int[][] grid, int row, int col, boolean[][] visited) {
+    public int dfs(int[][] grid, int row, int col, boolean[][] visited) {
         // out of bounce
         if (row < 0 || row >= grid.length || col < 0 || col >= grid[0].length) {
             return 0;
@@ -39,12 +40,6 @@ class NumOfIsland {
         if (visited[row][col] == true || grid[row][col] == 0)
             return 0;
         visited[row][col] = true;
-
-        // return 1
-        // + dfs(grid, row, col+1, visited)
-        // + dfs(grid, row, col-1, visited)
-        // + dfs(grid, row+1, col, visited)
-        // + dfs(grid, row-1, col, visited);
 
         dfs(grid, row, col + 1, visited);
         dfs(grid, row, col - 1, visited);
