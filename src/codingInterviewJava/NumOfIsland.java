@@ -1,13 +1,14 @@
 package codingInterviewJava;
 
+//Todo need to commment out package
+// or install Eclipse support for VS code
+
 class NumOfIsland {
 
     public static void main(String[] args) {
-    	
-    	NumOfIsland nIsland = new NumOfIsland();
 
+        NumOfIsland nIsland = new NumOfIsland();
         int[][] grid = new int[][] { { 1, 1, 0, 0, 0 }, { 1, 1, 0, 0, 0 }, { 0, 0, 1, 0, 0 }, { 0, 0, 0, 1, 1 } };
-        
         System.out.println(nIsland.countIsland(grid));
     }
 
